@@ -20,6 +20,6 @@ class Solution(object):
         """
         latest_indexes = {}
         for i in range(len(nums)):
-            if target - nums[i] in nums:
+            if (target - nums[i] in nums) and (i!=nums.index(target - nums[i])):
                 latest_indexes[i] = nums.index(target - nums[i])
-        return [latest_indexes.keys()[-1], latest_indexes.values()[-1]]
+        return [latest_indexes.keys()[0], latest_indexes.values()[0]]
